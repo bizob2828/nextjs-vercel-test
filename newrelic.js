@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ["bob-newrelic-nextjs-integration"],
+  app_name: ["bob-newrelic-nextjs-integration-amplify"],
   host: 'staging-collector.newrelic.com',
   /**
    * This setting controls distributed tracing.
