@@ -34,6 +34,7 @@ exports.config = {
      * production applications.
      */
     level: "trace",
+    filepath: 'stdout',
   },
   application_logging: {
     forwarding: {
