@@ -2,6 +2,7 @@ import Link from "next/link";
 import { logger } from "../../components/Logger";
 import Layout from "../../components/Layout";
 import * as http from "http";
+import * as https from "https";
 
 function Post({ post }) {
   return (
@@ -20,11 +21,17 @@ function Post({ post }) {
 export async function getServerSideProps({ params, req }) {
   const { id } = params;
   const host = req.headers.host;
+  let client
+  if (host.includes('localhost')) {
+    client = http
+  } else {
+    client = https
+  }
   // Call an external API endpoint to get posts
   // this is calling /api/blog handler function
   // using http because NR agent cannot propagate through global fetch just yet
   const posts: Array<{ id; title }> = await new Promise((resolve, reject) => {
-    http
+    client 
       .get(`http://${host}/api/blog`, (res) => {
         let body = "";
         res.on("data", (data) => (body += data.toString("utf8")));
