@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   experimental: {
-    instrumentationHook: false
+    instrumentationHook: true
   }
 }
