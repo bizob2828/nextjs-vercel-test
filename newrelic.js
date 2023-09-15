@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ["bob-newrelic-nextjs-integration"],
+  app_name: ["bob-newrelic-nextjs-integration-local"],
   host: 'staging-collector.newrelic.com',
   /**
    * This setting controls distributed tracing.
@@ -34,7 +34,7 @@ exports.config = {
      * production applications.
      */
     level: "trace",
-    filepath: 'stdout',
+    //filepath: 'stdout',
   },
   application_logging: {
     forwarding: {

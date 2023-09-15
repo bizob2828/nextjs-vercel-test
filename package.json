@@ -6,7 +6,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "cp next-server.patch.js node_modules/next/dist/server/next-server.js && cp next-server-inst.patch.js node_modules/@newrelic/next/lib/next-server.js"
   },
   "dependencies": {
     "@newrelic/next": "^0.7.0",
